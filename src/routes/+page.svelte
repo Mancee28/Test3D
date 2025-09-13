@@ -3,7 +3,8 @@ import type { ModelViewerElement } from '@google/model-viewer';
   import { onMount, tick } from 'svelte';
 
   let ModelViewerReady = $state(false);
-  let viewer: ModelViewerElement;
+  // svelte-ignore non_reactive_update
+    let viewer: ModelViewerElement;
 
   // Controls
   let exposure = $state(1.1);
