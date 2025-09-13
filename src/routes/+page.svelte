@@ -6,7 +6,6 @@ import type { ModelViewerElement } from '@google/model-viewer';
   let viewer: ModelViewerElement;
 
   // Controls
-  let autoRotate = $state(true);
   let exposure = $state(1.1);
   let shadowIntensity = $state(0.7);
 
@@ -37,12 +36,6 @@ import type { ModelViewerElement } from '@google/model-viewer';
     }
   })
 
-  $effect(() => {
-    if(ModelViewerReady){
-        viewer.autoRotate=autoRotate;
-    }
-  })
-
 </script>
 
 <section class="min-h-screen bg-gradient-to-b from-rose-50 via-white to-white dark:from-neutral-900 dark:via-neutral-950 dark:to-black text-neutral-800 dark:text-neutral-100">
@@ -65,12 +58,12 @@ import type { ModelViewerElement } from '@google/model-viewer';
     <div class="mb-6 flex flex-wrap items-center gap-3 text-sm">
       <label class="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 ring-1 ring-black/5 backdrop-blur dark:bg-white/5 dark:ring-white/10">
         <span>Luce</span>
-        <input class="w-28" type="range" min="0.6" max="1.6" step="0.05" bind:value={exposure}/>
+        <input class="w-28" type="range" min="0.6" max="1.6" step="0.10" bind:value={exposure}/>
       </label>
 
       <label class="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 ring-1 ring-black/5 backdrop-blur dark:bg-white/5 dark:ring-white/10">
         <span>Ombre</span>
-        <input class="w-28" type="range" min="0" max="1" step="0.05" bind:value={shadowIntensity}/>
+        <input class="w-28" type="range" min="0" max="1" step="0.10" bind:value={shadowIntensity}/>
       </label>
 
       <button class="ml-auto inline-flex items-center gap-2 rounded-full bg-rose-600 px-4 py-1.5 font-medium text-white shadow-sm shadow-rose-600/20 ring-1 ring-rose-700/30 transition hover:bg-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-400/50"
