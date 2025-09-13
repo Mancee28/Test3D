@@ -30,4 +30,5 @@ html, body, #svelte {
 model-viewer {
   display: block;
   overflow: hidden;
+  overscroll-behavior: contain;
 }

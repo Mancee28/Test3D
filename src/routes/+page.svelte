@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SpinButton from '$lib/assets/component/SpinButton.svelte';
 import type { ModelViewerElement } from '@google/model-viewer';
   import { onMount } from 'svelte';
 
@@ -33,6 +34,8 @@ import type { ModelViewerElement } from '@google/model-viewer';
         <div class="donut-glow h-full w-full"></div>
       </div>
 
+      <SpinButton {viewer} />
+
       <div class="relative overflow-hidden rounded-2xl bg-white/70 p-2 ring-1 ring-black/5 backdrop-blur-md shadow-xl dark:bg-white/5 dark:ring-white/10">
         {#if ModelViewerReady}
           <div class="relative">
@@ -42,15 +45,15 @@ import type { ModelViewerElement } from '@google/model-viewer';
               alt="Ciambella 3D con glassa rosa"
               camera-controls
               interaction-prompt="auto"
-              reveal="auto"
-              loading="eager"
+              loading="lazy"
               preload
-              dpr="1 2"
               tone-mapping="aces"
               environment-image="neutral"
               exposure=1.1
               shadow-intensity=0.9
               shadow-softness=0.9
+              auto-rotate
+              auto-rotate-delay="0"
               ar
               ar-modes="webxr scene-viewer quick-look"
               style="width:100%; height:520px; border-radius:1rem;"
